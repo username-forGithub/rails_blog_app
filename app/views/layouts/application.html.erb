@@ -19,7 +19,7 @@
     <!-- script -->
     <%= javascript_include_tag 'https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js' %>
 
-  <body>
+  <body class="w-[70%] mx-auto py-5">
     <%= link_to 'HOME', root_path, class: 'mr-8' %>
     <%= link_to 'BACK', 'javascript:history.back()' %>
     <%= yield %>
