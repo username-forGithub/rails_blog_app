@@ -16,7 +16,7 @@ gem 'pg', '~> 1.1'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Use for hiding credentials
-gem 'dotenv-rails'
+
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -88,3 +88,5 @@ end
 gem 'pagy', '~> 5.10'
 
 gem 'sassc-rails', '~> 2.1'
+
+gem 'devise'

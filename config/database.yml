@@ -25,7 +25,7 @@ default: &default
 
 development:
   <<: *default
-  database: vv_development
+  database: vv_devise2_development
   user: postgres
   password: postgres
 
@@ -61,7 +61,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: vv_test
+  database: vv_devise2_test
   user: postgres
   password: postgres
 
@@ -87,6 +87,6 @@ test:
 #
 production:
   <<: *default
-  database: vv_production
+  database: vv_devise2_production
   username: blogapp
   password: <%= ENV["BLOGAPP_DATABASE_PASSWORD"] %>
