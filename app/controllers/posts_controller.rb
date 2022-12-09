@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find(params[:user_id])
     @pagy, @posts = pagy(@user.posts)
@@ -24,19 +25,7 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Error: Post could not be saved'
       render :new
     end
-  end
-
-  load_and_authorize_resource
-
-  # def destroy
-  #   post = Post.find(params[:id])
-  #   if post.destroy
-  #     flash[:success] = 'Post was successfully deleted.'
-  #   else
-  #     flash[:error] = 'Error: Post could not be deleted'
-  #   end
-  #   redirect_to user_posts_url
-  # end
+  end  
 
   private
 
