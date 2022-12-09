@@ -1,7 +1,9 @@
 <%= link_to user_path(user) do %>
   <li class="user ml-2 mt-4 flex items-center gap-10">
     <div class="user-image">
-      <%= image_tag user.photo, alt: "#{user.name}-avatar", class: 'w-36 h-36 object-cover object-center rounded-[50%]' %>
+      <% if user.photo %>
+        <%= image_tag user.photo, alt: "#{user.name}-avatar", class: 'w-36 h-36 object-cover object-center rounded-[50%]' %>
+      <% end %>
     </div>
     <div class="user-info w-10/12 border border-red flex flex-col">
       <h3 class="username text-2xl ml-2"><%= user.name %></h3>

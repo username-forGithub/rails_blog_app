@@ -9,12 +9,24 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <%= render "layouts/top_header" %>
+
+
   </head>
 
   <body class="w-[70%] mx-auto py-5">
-    <%= link_to 'HOME', root_path, class: 'mr-8' %>
-    <%= link_to 'BACK', 'javascript:history.back()' %>
+    <%= render "layouts/top_header" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div class="flex">
+      <%= link_to 'HOME', root_path, class: 'mr-8' %>
+      <%= link_to 'BACK', 'javascript:history.back()', class: 'mr-8' %>
+
+      <% if user_signed_in? %>
+        <%= button_to "LOG OUT", destroy_user_session_path, method: :delete, data: { turbo: false } %>
+      <% end %>
+    </div>
+
     <%= yield %>
     <%= render "layouts/bottom_header" %>
   </body>
