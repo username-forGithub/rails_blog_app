@@ -6,9 +6,9 @@ class Ability
     if user.is?(:admin)
       can :manage, :all
     else
-      can :destroy, Post, author: user
-      can :destroy, Comment, author: user
-      can :read, :all # user(not admin) can read all the blogs
+      can :manage, Post, author: user
+      can :manage, Comment, author: user
+      can :read, :all
     end
   end
 end
