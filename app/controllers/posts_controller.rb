@@ -25,7 +25,7 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Error: Post could not be saved'
       render :new
     end
-  end  
+  end
 
   private
 
