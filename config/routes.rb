@@ -11,4 +11,16 @@ Rails.application.routes.draw do
       resources :likes, only: [:create]
     end
   end
+
+  # API routes
+  namespace :api do
+    namespace :v1 do
+      post 'users/login' => 'users#login'
+      get  'user/posts' => 'posts#list_posts'
+      get  'user/post/comments' => 'posts#list_comments'
+      post 'user/post/new_comment' => 'posts#add_comment'
+      resources :users, only: [:index, :show]
+    end
+  end
+  
 end
