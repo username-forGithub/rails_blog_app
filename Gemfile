@@ -91,3 +91,7 @@ gem 'sassc-rails', '~> 2.1'
 gem 'devise'
 
 gem 'cancancan'
+
+gem 'jwt'
+
+gem 'bcrypt'
